@@ -16,7 +16,14 @@ function card(id){return CARDS.find(c=>c.id===id)}
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
 function remaining(a){return a.endsAt?Math.max(0,Math.ceil((a.endsAt-Date.now())/1000)):null}
 function fmt(sec){let m=Math.floor(sec/60),s=sec%60;return `${m}:${String(s).padStart(2,'0')}`}
-function timerMinutes(desc){let m=desc.match(/(?:next|for the next|within|in)\s+(\d+)\s*(minutes?|mins?|hours?|hrs?)/i);if(!m)return null;return Number(m[1])*(/hour|hr/i.test(m[2])?60:1)}
+function timerMinutes(desc){
+ let text=String(desc||'').toLowerCase();
+ let m=text.match(/(?:next|for the next|within|in)\\s+(\\d+)\\s*(minutes?|mins?|hours?|hrs?)/i);
+ if(m)return Number(m[1])*(/hour|hr/i.test(m[2])?60:1);
+ m=text.match(/(?:next|for the next|for)\\s+(half an hour|an hour|one hour|half hour)/i);
+ if(m)return /half/i.test(m[1])?30:60;
+ return null;
+}
 function activateCurse(c){let mins=timerMinutes(c.description);let entry={id:c.id,startedAt:Date.now(),endsAt:mins?Date.now()+mins*60000:null};state.active.push(entry);state.last=c.id;toast(mins?`Curse activated — ${mins} minute timer started`:'Curse pinned until you clear it');save()}
 function putInHand(c){if(state.hand.length<state.handLimit){state.hand.push(c.id);state.last=c.id;save();toast('Blessing added to your hand')}else{showOverflow(c.id)}}
 function drawOne(){if(!state.deck.length){if(state.discard.length){state.deck=shuffle(state.discard.map(x=>x.id));state.discard=[];toast('Discard pile shuffled back into the deck')}else{toast('The deck is empty');return null}}let id=state.deck.shift();return card(id)}

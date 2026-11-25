@@ -1,52 +1,53 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#233041"><meta name="color-scheme" content="light"><meta name="description" content="The Sydney Decathlon — draw your fate.">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"><link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="style.css"><title>The Sydney Decathlon</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#233041">
+<meta name="description" content="The Sydney Decathlon card deck">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>The Sydney Decathlon</title>
 </head>
 <body>
 <header class="topbar">
   <a class="brand" href="./"><img class="brand-logo" src="sydney-decathlon-logo.png" alt=""><span>THE SYDNEY <b>DECATHLON</b></span></a>
-  <div class="top-actions"><button id="missionBtn" class="mission-btn">Mission Board <span>↗</span></button><button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙</button></div>
+  <div class="top-actions"><button id="missionBtn" class="mission-btn">Mission Board ↗</button><button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙</button></div>
 </header>
 <main>
-  <section class="hero">
-    <div class="eyebrow">SYDNEY • THE DECK IS STACKED</div>
-    <h1>Draw your <em>fate.</em></h1>
-    <p class="hero-copy">Every mission has a twist. Reveal a card and see what Sydney throws at you.</p>
+  <section class="deck-panel">
     <div class="stats">
       <div><span class="stat-label">DRAW PILE</span><strong id="deckCount">50</strong></div>
-      <div><span class="stat-label">IN YOUR HAND</span><strong id="handCount">0 / 3</strong></div>
-      <div><span class="stat-label">DISCARD PILE</span><strong id="discardCount">0</strong></div>
+      <div><span class="stat-label">HAND</span><strong id="handCount">0 / 3</strong></div>
+      <div><span class="stat-label">DISCARD</span><strong id="discardCount">0</strong></div>
     </div>
-  </section>
-  <section class="draw-area">
-    <div class="deck-wrap">
-      <div class="deck-stack" id="deckStack"><img src="card-back.png" alt="Card back"><span class="deck-count" id="stackCount">50</span></div>
-      <div class="deck-caption">THE DECK</div>
+    <div class="draw-row">
+      <div class="deck-wrap">
+        <div class="deck-stack" id="deckStack"><img src="card-back.png" alt="Sydney Decathlon card back"><span class="deck-count" id="stackCount">50</span></div>
+      </div>
+      <button id="drawBtn" class="draw-btn">DRAW CARD <span>→</span></button>
     </div>
-    <div class="draw-controls"><button id="drawBtn" class="draw-btn"><span class="draw-icon">✦</span> DRAW A CARD <span class="draw-arrow">→</span></button><p>Draw after completing a mission</p></div>
-    <div class="last-draw" id="lastDraw"><span class="eyebrow">READY WHEN YOU ARE</span><p>Your next card is waiting...</p></div>
-  </section>
-  <section class="panel active-panel">
-    <div class="section-heading"><div><span class="eyebrow">CURRENT EFFECTS</span><h2>Active curses <span class="count-pill" id="curseCount">0</span></h2></div><span class="subtle">Clear when the curse is over</span></div>
-    <div id="activeCurses" class="empty-state">No active curses. Enjoy the good run.</div>
+    <div class="last-draw" id="lastDraw"><span>READY TO DRAW</span></div>
   </section>
   <section class="panel">
-    <div class="section-heading"><div><span class="eyebrow">YOUR POWER-UPS</span><h2>Blessing hand <span class="count-pill" id="handPill">0</span></h2></div><span class="subtle" id="handLimitLabel">3 card limit</span></div>
-    <div id="handCards" class="hand-grid"><div class="empty-state">No blessings in your hand yet.</div></div>
+    <div class="section-heading"><h2>Active curses <span class="count-pill" id="curseCount">0</span></h2></div>
+    <div id="activeCurses" class="empty-state">No active curses.</div>
   </section>
   <section class="panel">
-    <div class="section-heading"><div><span class="eyebrow">THE HISTORY</span><h2>Discard pile <span class="count-pill" id="discardPill">0</span></h2></div><button class="text-btn" id="viewDiscard">View cards ↓</button></div>
+    <div class="section-heading"><h2>Blessing hand <span class="count-pill" id="handPill">0</span></h2><span class="subtle" id="handLimitLabel">3 card limit</span></div>
+    <div id="handCards" class="hand-grid"><div class="empty-state">No blessings in your hand.</div></div>
+  </section>
+  <section class="panel">
+    <div class="section-heading"><h2>Discard pile <span class="count-pill" id="discardPill">0</span></h2><button class="text-btn" id="viewDiscard">VIEW</button></div>
     <div id="discardList" class="discard-list hidden"></div>
   </section>
-  <footer><span>THE SYDNEY DECATHLON</span><span>PLAY FAIR. TRAVEL SMART.</span><button id="resetBtn">Reset game</button></footer>
+  <footer><button id="resetBtn">Reset game</button></footer>
 </main>
-<div class="overlay hidden" id="revealOverlay"><div class="reveal-modal"><button class="close" id="closeReveal">×</button><div class="reveal-flip" id="revealFlip"><div class="reveal-back"><img src="card-back.png"></div><div class="reveal-front" id="revealFront"></div></div><div class="reveal-status" id="revealStatus"></div><div class="reveal-actions" id="revealActions"></div></div></div>
-<div class="overlay hidden" id="overflowOverlay"><div class="dialog"><button class="close" id="closeOverflow">×</button><span class="eyebrow">HAND IS FULL</span><h2>Make room for this blessing</h2><p>Your hand is at its limit. Choose a card to discard, or discard the new card.</p><div id="overflowChoices"></div></div></div>
-<div class="overlay hidden" id="settingsOverlay"><div class="dialog"><button class="close" id="closeSettings">×</button><span class="eyebrow">GAME SETTINGS</span><h2>Make it yours.</h2><label for="missionUrl">Mission Board URL</label><input id="missionUrl" type="url" placeholder="https://example.com/mission-board"><p class="help">The Mission Board button opens this address. Leave blank to hide the destination prompt.</p><button id="saveSettings" class="draw-btn full">SAVE SETTINGS</button><div class="divider"></div><p class="help">Your game, deck, hand and active timers are saved on this device.</p></div></div>
+<div class="overlay hidden" id="revealOverlay"><div class="reveal-modal"><button class="close" id="closeReveal" aria-label="Close">×</button><div class="reveal-flip" id="revealFlip"><div class="reveal-back"><img src="card-back.png" alt=""></div><div class="reveal-front" id="revealFront"></div></div><div class="reveal-status" id="revealStatus"></div><div class="reveal-actions" id="revealActions"></div></div></div>
+<div class="overlay hidden" id="overflowOverlay"><div class="dialog"><button class="close" id="closeOverflow">×</button><h2>Hand is full</h2><p>Choose a card to discard, or discard the new card.</p><div id="overflowChoices"></div></div></div>
+<div class="overlay hidden" id="settingsOverlay"><div class="dialog"><button class="close" id="closeSettings">×</button><h2>Settings</h2><label for="missionUrl">Mission Board URL</label><input id="missionUrl" type="url" placeholder="https://example.com"><button id="saveSettings" class="draw-btn full">SAVE</button></div></div>
 <div class="toast" id="toast"></div>
 <script src="cards.js"></script><script src="app.js"></script>
 </body></html>
