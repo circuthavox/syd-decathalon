@@ -4,7 +4,7 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f2f0ec",
+  "background_color": "#f4f2ef",
   "theme_color": "#233041",
   "description": "The Sydney Decathlon card drawing game.",
   "icons": [
