@@ -1,12 +1,5 @@
 # The Sydney Decathlon
 
-A GitHub Pages-ready card drawing PWA.
-
-## Publish on GitHub Pages
-1. Extract this ZIP.
-2. Upload the contents (not the enclosing folder) to the root of your GitHub repository.
-3. In GitHub, open **Settings → Pages**, choose **Deploy from a branch**, select your main branch and `/ (root)`.
-4. Open the published URL. On mobile, use your browser's **Add to Home screen / Install app** option.
 
 ## Mission Board button
 Open the gear/settings button in the website and enter the full URL for your Mission Board (including `https://`). It is saved on that device.
