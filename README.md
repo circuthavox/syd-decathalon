@@ -25,4 +25,5 @@ Some complex card effects (such as multi-draw selection, deck stacking, transpor
 - `index.html`, `style.css`, `app.js`: app
 - `cards.js`: card titles/descriptions/types and image paths
 - `cards/`: supplied card artwork
+- `card-back.png`: custom blue-purple Sydney Decathlon card back
 - `manifest.webmanifest`, `sw.js`: PWA setup

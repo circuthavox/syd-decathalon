@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#233041"><meta name="description" content="The Sydney Decathlon — draw your fate.">
+<meta name="theme-color" content="#233041"><meta name="color-scheme" content="light"><meta name="description" content="The Sydney Decathlon — draw your fate.">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"><link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css"><title>The Sydney Decathlon</title>
 </head>
@@ -24,7 +24,7 @@
   </section>
   <section class="draw-area">
     <div class="deck-wrap">
-      <div class="deck-stack" id="deckStack"><img src="cards/Front%20of%20Cards.png" alt="Card back"><span class="deck-count" id="stackCount">50</span></div>
+      <div class="deck-stack" id="deckStack"><img src="card-back.png" alt="Card back"><span class="deck-count" id="stackCount">50</span></div>
       <div class="deck-caption">THE DECK</div>
     </div>
     <div class="draw-controls"><button id="drawBtn" class="draw-btn"><span class="draw-icon">✦</span> DRAW A CARD <span class="draw-arrow">→</span></button><p>Draw after completing a mission</p></div>
@@ -44,7 +44,7 @@
   </section>
   <footer><span>THE SYDNEY DECATHLON</span><span>PLAY FAIR. TRAVEL SMART.</span><button id="resetBtn">Reset game</button></footer>
 </main>
-<div class="overlay hidden" id="revealOverlay"><div class="reveal-modal"><button class="close" id="closeReveal">×</button><div class="reveal-flip" id="revealFlip"><div class="reveal-back"><img src="cards/Front%20of%20Cards.png"></div><div class="reveal-front" id="revealFront"></div></div><div class="reveal-status" id="revealStatus"></div><div class="reveal-actions" id="revealActions"></div></div></div>
+<div class="overlay hidden" id="revealOverlay"><div class="reveal-modal"><button class="close" id="closeReveal">×</button><div class="reveal-flip" id="revealFlip"><div class="reveal-back"><img src="card-back.png"></div><div class="reveal-front" id="revealFront"></div></div><div class="reveal-status" id="revealStatus"></div><div class="reveal-actions" id="revealActions"></div></div></div>
 <div class="overlay hidden" id="overflowOverlay"><div class="dialog"><button class="close" id="closeOverflow">×</button><span class="eyebrow">HAND IS FULL</span><h2>Make room for this blessing</h2><p>Your hand is at its limit. Choose a card to discard, or discard the new card.</p><div id="overflowChoices"></div></div></div>
 <div class="overlay hidden" id="settingsOverlay"><div class="dialog"><button class="close" id="closeSettings">×</button><span class="eyebrow">GAME SETTINGS</span><h2>Make it yours.</h2><label for="missionUrl">Mission Board URL</label><input id="missionUrl" type="url" placeholder="https://example.com/mission-board"><p class="help">The Mission Board button opens this address. Leave blank to hide the destination prompt.</p><button id="saveSettings" class="draw-btn full">SAVE SETTINGS</button><div class="divider"></div><p class="help">Your game, deck, hand and active timers are saved on this device.</p></div></div>
 <div class="toast" id="toast"></div>
