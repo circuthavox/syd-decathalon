@@ -9,8 +9,14 @@
   "description": "The Sydney Decathlon card drawing game.",
   "icons": [
     {
-      "src": "cards/Front of Cards.png",
-      "sizes": "1429x2000",
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
