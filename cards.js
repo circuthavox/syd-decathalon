@@ -17,7 +17,7 @@ window.CARDS = [
     "id": "card-03",
     "image": "cards/Sydney Decathlon Cards_20261126_040158_0002.png",
     "title": "Curse of the German Engenireeing",
-    "description": "SS [DEUTSCHE Bé HNED} ee Any public transport service you board for the next half an hour must be delayed from it’s timetabled time.",
+    "description": "DEUTSCHE BAHNED! Any public transport service you board for the next half an hour must be delayed from it’s timetabled time.",
     "type": "curse"
   },
   {
@@ -163,15 +163,15 @@ window.CARDS = [
   {
     "id": "card-24",
     "image": "cards/Sydney Decathlon Cards_20261126_040159_0023.png",
-    "title": "S",
-    "description": "Curse of the Sattelite Your next completed mission must be a GPS mission.",
+    "title": "Curse of the Sattelite",
+    "description": "Your next completed mission must be a GPS mission.",
     "type": "curse"
   },
   {
     "id": "card-25",
     "image": "cards/Sydney Decathlon Cards_20261126_040159_0024.png",
-    "title": "S",
-    "description": "Curse of the Shutterbug Your next completed mission must be a CAMERA mission.",
+    "title": "Curse o the Shutterbug",
+    "description": "Your next completed mission must be a CAMERA mission.",
     "type": "curse"
   },
   {
